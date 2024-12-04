@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中药材百科 - 传统中药材详解</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://api.dicebear.com/7.x/shapes/svg?seed=tcm&backgroundColor=614016" alt="中药材百科Logo">
+                    <span class="logo-text">中药材百科</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="herbs.html" class="active">中药材百科</a></li>
+                <li><a href="science.html">中医学科普</a></li>
+                <li><a href="recipes.html">养生食谱</a></li>
+                <li><a href="#" onclick="showContact()">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主体内容区域 -->
+    <main class="herbs-page">
+        <div class="herbs-header">
+            <h1>传统中药材详解</h1>
+            <p>精选道地药材，传承千年智慧</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索中药材..." id="searchInput" onkeyup="searchHerbs()">
+                <button type="submit" onclick="searchHerbs()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="herb-card" data-herb="ginseng">
+                <div class="herb-image">
+                    <img src="images/ginseng.png" alt="人参">
+                </div>
+                <div class="herb-info">
+                    <h3>人参</h3>
+                    <p>补气养血、提升免疫力</p>
+                    <button class="details-btn" onclick="showHerbDetails('ginseng')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="goji">
+                <div class="herb-image">
+                    <img src="images/goji.png" alt="枸杞">
+                </div>
+                <div class="herb-info">
+                    <h3>枸杞</h3>
+                    <p>滋补肝肾、明目养神</p>
+                    <button class="details-btn" onclick="showHerbDetails('goji')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="angelica">
+                <div class="herb-image">
+                    <img src="images/angelica.png" alt="当归">
+                </div>
+                <div class="herb-info">
+                    <h3>当归</h3>
+                    <p>补血活血、调经止痛</p>
+                    <button class="details-btn" onclick="showHerbDetails('angelica')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="lingzhi">
+                <div class="herb-image">
+                    <img src="images/lingzhi.png" alt="灵芝">
+                </div>
+                <div class="herb-info">
+                    <h3>灵芝</h3>
+                    <p>扶正固本、延年益寿</p>
+                    <button class="details-btn" onclick="showHerbDetails('lingzhi')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="chrysanthemum">
+                <div class="herb-image">
+                    <img src="images/chrysanthemum.png" alt="菊花">
+                </div>
+                <div class="herb-info">
+                    <h3>菊花</h3>
+                    <p>清热明目、解毒消炎</p>
+                    <button class="details-btn" onclick="showHerbDetails('chrysanthemum')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="mugwort">
+                <div class="herb-image">
+                    <img src="images/mugwort.png" alt="艾草">
+                </div>
+                <div class="herb-info">
+                    <h3>艾草</h3>
+                    <p>温经散寒、祛湿止痛</p>
+                    <button class="details-btn" onclick="showHerbDetails('mugwort')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="dates">
+                <div class="herb-image">
+                    <img src="images/dates.png" alt="红枣">
+                </div>
+                <div class="herb-info">
+                    <h3>红枣</h3>
+                    <p>补气养血、安神助眠</p>
+                    <button class="details-btn" onclick="showHerbDetails('dates')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="lotus">
+                <div class="herb-image">
+                    <img src="images/lotus.png" alt="莲子">
+                </div>
+                <div class="herb-info">
+                    <h3>莲子</h3>
+                    <p>补脾止泻、养心安神</p>
+                    <button class="details-btn" onclick="showHerbDetails('lotus')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="longan">
+                <div class="herb-image">
+                    <img src="images/longan.png" alt="桂圆">
+                </div>
+                <div class="herb-info">
+                    <h3>桂圆</h3>
+                    <p>补血安神、益气健脾</p>
+                    <button class="details-btn" onclick="showHerbDetails('longan')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="fleece">
+                <div class="herb-image">
+                    <img src="images/fleece.png" alt="何首乌">
+                </div>
+                <div class="herb-info">
+                    <h3>何首乌</h3>
+                    <p>补肝肾、益精血</p>
+                    <button class="details-btn" onclick="showHerbDetails('fleece')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="citrus">
+                <div class="herb-image">
+                    <img src="images/citrus.png" alt="陈皮">
+                </div>
+                <div class="herb-info">
+                    <h3>陈皮</h3>
+                    <p>理气健脾、燥湿化痰</p>
+                    <button class="details-btn" onclick="showHerbDetails('citrus')">查看详情</button>
+                </div>
+            </div>
+
+            <div class="herb-card" data-herb="astragalus">
+                <div class="herb-image">
+                    <img src="images/astragalus.png" alt="黄芪">
+                </div>
+                <div class="herb-info">
+                    <h3>黄芪</h3>
+                    <p>补气升阳、固表止汗</p>
+                    <button class="details-btn" onclick="showHerbDetails('astragalus')">查看详情</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 中药详情弹窗 -->
+    <div class="modal" id="herbModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('herbModal')">&times;</span>
+            <div class="modal-header">
+                <div class="modal-herb-image">
+                    <img src="" alt="">
+                </div>
+                <h2 class="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="info-section">
+                    <h3>功效主治</h3>
+                    <p class="effects"></p>
+                </div>
+                <div class="info-section">
+                    <h3>用法用量</h3>
+                    <p class="usage"></p>
+                </div>
+                <div class="info-section">
+                    <h3>注意事项</h3>
+                    <p class="precautions"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们弹窗 -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
+            <h2>联系我们</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>客服电话：15538716081</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>电子邮箱：yumingxing812@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>地址：河南省郑州市金水区商务内环中医药产业大厦</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <p>工作时间：周一至周五 9:00-18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页面底部 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关注我们</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-weixin"></i>
+                        <span>官方微信</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-weibo"></i>
+                        <span>官方微博</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                        <span>官方抖音</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p><i class="fas fa-phone"></i> 15538716081</p>
+                <p><i class="fas fa-envelope"></i> yumingxing812@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 河南省郑州市金水区商务内环中医药产业大厦</p>
+            </div>
+            <div class="footer-section">
+                <h3>友情链接</h3>
+                <div class="friend-links">
+                    <a href="#">中医药管理局</a>
+                    <a href="#">中医药学会</a>
+                    <a href="#">中医药研究院</a>
+                    <a href="#">中医药大学</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 中药材百科 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 中药材详细信息数据
+        const herbData = {
+            ginseng: {
+                name: "人参",
+                image: "images/ginseng.png",
+                effects: "人参性平味甘，具有补气养血、提高免疫力的功效。主要用于气血亏虚、体力不足、免疫力低下等症状。",
+                usage: "可泡茶饮用，一般用量3-5克，也可煎煮服用。年老体弱者可适当增加用量。",
+                precautions: "阴虚火旺者慎用，不宜与萝卜同食。服用期间注意监测血压，孕妇慎用。"
+            },
+            goji: {
+                name: "枸杞",
+                image: "images/goji.png",
+                effects: "枸杞性平味甘，具有滋补肝肾、明目养神的功效。主要用于视力减退、腰膝酸软、头晕目眩等症状。",
+                usage: "可泡茶饮用，一般用量6-12克，也可直接食用或煮汤。",
+                precautions: "脾胃寒、腹泻者慎用。感冒发热期间不宜服用。"
+            },
+            angelica: {
+                name: "当归",
+                image: "images/angelica.png",
+                effects: "当归性温味甘，具有补血活血、调经止痛的功效。主要用于血虚萎黄、月经不调、经痛、虚寒腹痛等症状。",
+                usage: "一般用量6-15克，可煎煮服用或泡酒。也可熬汤或煲汤。",
+                precautions: "月经过多及有出血倾向者慎用，不宜与含鞣质的药物同服。"
+            },
+            lingzhi: {
+                name: "灵芝",
+                image: "images/lingzhi.png",
+                effects: "灵芝性平味甘，具有扶正固本、延年益寿的功效。主要用于体虚乏力、失眠多梦、咳嗽气喘等症状。",
+                usage: "一般用量3-6克，可煎煮、泡茶或磨粉服用。也可制成片剂或胶囊。",
+                precautions: "服用期间注意监测凝血功能，手术前两周需停止服用。"
+            },
+            chrysanthemum: {
+                name: "菊花",
+                image: "images/chrysanthemum.png",
+                effects: "菊花性微寒味甘，具有清热明目、解毒消炎的功效。主要用于头痛眩晕、目赤肿痛、风热感冒等症状。",
+                usage: "一般用量5-10克，以开水冲泡代茶饮用。也可与其他花茶搭配。",
+                precautions: "胃寒及脾胃虚弱者慎用，不宜空腹饮用。"
+            },
+            mugwort: {
+                name: "艾草",
+                image: "images/mugwort.png",
+                effects: "艾草性温味苦，具有温经散寒、祛湿止痛的功效。主要用于虚寒腹痛、月经不调、关节疼痛等症状。",
+                usage: "外用可制艾条艾灸，内服一般用量3-10克，可煎煮服用。",
+                precautions: "阴虚火旺者慎用，孕妇慎用。"
+            },
+            dates: {
+                name: "红枣",
+                image: "images/dates.png",
+                effects: "红枣性温味甘，具有补气养血、安神助眠的功效。主要用于气血两虚、食欲不振、失眠多梦等症状。",
+                usage: "可直接食用，一般每日15-30克。也可煮粥、煲汤或泡茶。",
+                precautions: "糖尿病患者慎用，牙齿不好者建议煮软后食用。"
+            },
+            lotus: {
+                name: "莲子",
+                image: "images/lotus.png",
+                effects: "莲子性平味甘，具有补脾止泻、养心安神的功效。主要用于脾虚泄泻、心神不宁、失眠多梦等症状。",
+                usage: "可直接食用或煮粥，一般用量10-15克。也可煲汤或做甜品。",
+                precautions: "便秘者慎用，过量可能会出现便秘症状。"
+            },
+            longan: {
+                name: "桂圆",
+                image: "images/longan.png",
+                effects: "桂圆性温味甘，具有补血安神、益气健脾的功效。主要用于气血不足、心悸失眠、食欲不振等症状。",
+                usage: "可直接食用，一般每日10-15克。也可泡茶或煲汤。",
+                precautions: "胃热人群慎用，不宜与萝卜同食。"
+            },
+            fleece: {
+                name: "何首乌",
+                image: "images/fleece.png",
+                effects: "何首乌性微温味苦甘，具有补肝肾、益精血的功效。主要用于肝肾不足、头晕目眩、白发早生等症状。",
+                usage: "一般用量10-15克，可煎煮服用。也可泡酒或制成粉剂。",
+                precautions: "肝功能异常者慎用，服用期间需定期检查肝功能。"
+            },
+            citrus: {
+                name: "陈皮",
+                image: "images/citrus.png",
+                effects: "陈皮性温味辛，具有理气健脾、燥湿化痰的功效。主要用于脾胃气滞、痰湿咳嗽、食欲不振等症状。",
+                usage: "一般用3-10克，可煎煮服用或泡茶。也可用于调味或制作糕点。",
+                precautions: "阴虚燥热者慎用，胃酸过多者慎用。"
+            },
+            astragalus: {
+                name: "黄芪",
+                image: "images/astragalus.png",
+                effects: "黄芪性微温味甘，具有补气升阳、固表止汗的功效。主要用于气虚乏力、自汗、面色萎黄等症状。",
+                usage: "一般用量10-30克，可煎煮服用或煲汤。大剂量可达50-100克。",
+                precautions: "表实邪旺者忌服，感冒发热期间应暂停使用。"
+            }
+        };
+
+        // 移动端菜单切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // 点击菜单项后关闭菜单
+            document.querySelectorAll('.nav-menu a').forEach(item => {
+                item.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+
+        // 搜索功能
+        function searchHerbs() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const herbCards = document.querySelectorAll('.herb-card');
+            
+            herbCards.forEach(card => {
+                const herbName = card.querySelector('h3').textContent.toLowerCase();
+                const herbDesc = card.querySelector('p').textContent.toLowerCase();
+                
+                if (herbName.includes(searchText) || herbDesc.includes(searchText)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 显示中药详情
+        function showHerbDetails(herbId) {
+            const modal = document.getElementById('herbModal');
+            const herb = herbData[herbId];
+            
+            if (herb) {
+                modal.querySelector('.modal-title').textContent = herb.name;
+                modal.querySelector('.modal-herb-image img').src = herb.image;
+                modal.querySelector('.effects').textContent = herb.effects;
+                modal.querySelector('.usage').textContent = herb.usage;
+                modal.querySelector('.precautions').textContent = herb.precautions;
+                modal.style.display = 'flex';
+            }
+        }
+
+        // 显示联系我们弹窗
+        function showContact() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        // 关闭弹窗
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

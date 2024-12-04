@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中医学科普 - 传统中医智慧</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://api.dicebear.com/7.x/shapes/svg?seed=tcm&backgroundColor=614016" alt="中药材百科Logo">
+                    <span class="logo-text">中药材百科</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="herbs.html">中药材百科</a></li>
+                <li><a href="science.html" class="active">中医学科普</a></li>
+                <li><a href="recipes.html">养生食谱</a></li>
+                <li><a href="#" onclick="showContact()">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主体内容区域 -->
+    <main class="science-page">
+        <div class="science-header">
+            <h1>探索中医智慧</h1>
+            <p>传承千年的东方医学智慧，让我们一起了解中医的奥秘</p>
+        </div>
+
+        <div class="science-grid">
+            <!-- 基础理论部分 -->
+            <section class="science-section theory-section">
+                <h2><i class="fas fa-book"></i> 中医基础理论</h2>
+                <div class="science-cards">
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-yin-yang"></i></div>
+                        <h3>阴阳五行</h3>
+                        <p>阴阳五行学说是中医理论的基础，解释自然界和人体的变化规律。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3>脏腑经络</h3>
+                        <p>五脏六腑和经络系统构成人体的功能网络，维持生命活动。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-wind"></i></div>
+                        <h3>气血津液</h3>
+                        <p>气血津液是人体重要的物质基础，关系着人体的生理功能。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 诊断方法部分 -->
+            <section class="science-section diagnosis-section">
+                <h2><i class="fas fa-stethoscope"></i> 中医诊断方法</h2>
+                <div class="science-cards">
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-eye"></i></div>
+                        <h3>望诊</h3>
+                        <p>通过观察患者的神色、形态、舌象等来判断疾病。</p>
+                        <a href="#" class="learn-more">了解多</a>
+                    </div>
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-volume-up"></i></div>
+                        <h3>闻诊</h3>
+                        <p>通过听患者的声音、气息等来诊断疾病。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-comments"></i></div>
+                        <h3>问诊</h3>
+                        <p>通过询问患者的症状、病史等来了解病情。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-hand-paper"></i></div>
+                        <h3>切诊</h3>
+                        <p>通过把脉等触诊方法来诊断疾病。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 治疗方法部分 -->
+            <section class="science-section treatment-section">
+                <h2><i class="fas fa-medkit"></i> 中医治疗方法</h2>
+                <div class="science-cards">
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-mortar-pestle"></i></div>
+                        <h3>中药治疗</h3>
+                        <p>运用天然药物调节人体阴阳平衡，治疗疾病。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-hand-point-up"></i></div>
+                        <h3>针灸推拿</h3>
+                        <p>通过针刺、艾灸和推拿手法来治疗疾病。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                    <div class="science-card">
+                        <div class="card-icon"><i class="fas fa-running"></i></div>
+                        <h3>养生保健</h3>
+                        <p>通过调养生息、饮食起居来预防疾病。</p>
+                        <a href="#" class="learn-more">了解更多</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关注我们</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-weixin"></i>
+                        <span>官方微信</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-weibo"></i>
+                        <span>官方微博</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                        <span>官方抖音</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p><i class="fas fa-phone"></i> 15538716081</p>
+                <p><i class="fas fa-envelope"></i> yumingxing812@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 河南省郑州市金水区商务内环中医药产业大厦</p>
+            </div>
+            <div class="footer-section">
+                <h3>友情链接</h3>
+                <div class="friend-links">
+                    <a href="#">中医药管理局</a>
+                    <a href="#">中医药学会</a>
+                    <a href="#">中医药研究院</a>
+                    <a href="#">中医药大学</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 中药材百科 版权所有</p>
+        </div>
+    </footer>
+
+    <!-- 联系我们弹窗 -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
+            <h2>联系我们</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>客服电话：15538716081</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>电子邮箱：yumingxing812@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>地址：河南省郑州市金水区商务内环中医药产业大厦</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <p>工作时间：周一至周五 9:00-18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 移动端菜单切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // 点击菜单项后关闭菜单
+            document.querySelectorAll('.nav-menu a').forEach(item => {
+                item.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+
+        // 显示联系我们弹窗
+        function showContact() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        // 关闭弹窗
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

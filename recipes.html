@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>养生食谱 - 中药材百科</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://api.dicebear.com/7.x/shapes/svg?seed=tcm&backgroundColor=614016" alt="中药材百科Logo">
+                    <span class="logo-text">中药材百科</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="herbs.html">中药材百科</a></li>
+                <li><a href="science.html">中医学科普</a></li>
+                <li><a href="recipes.html" class="active">养生食谱</a></li>
+                <li><a href="#" onclick="showContact()">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主体内容 -->
+    <main class="recipes-page">
+        <div class="recipes-header">
+            <h1>养生食谱精选</h1>
+            <p>传承千年养生智慧，滋养现代健康生活</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索食谱..." id="searchInput" onkeyup="searchRecipes()">
+                <button type="submit" onclick="searchRecipes()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="recipes-categories">
+            <button class="category-btn active" onclick="filterRecipes('all')">全部食谱</button>
+            <button class="category-btn" onclick="filterRecipes('补气')">补气养生</button>
+            <button class="category-btn" onclick="filterRecipes('安神')">安神助眠</button>
+            <button class="category-btn" onclick="filterRecipes('养颜')">养颜驻颜</button>
+            <button class="category-btn" onclick="filterRecipes('温补')">温补养生</button>
+        </div>
+
+        <div class="recipes-container">
+            <!-- 补气养生食谱 -->
+            <div class="recipe-card" data-category="补气">
+                <div class="recipe-image">
+                    <img src="https://img.freepik.com/free-photo/traditional-chinese-soup_1147-155.jpg" alt="人参养生汤">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-header">
+                        <h2>人参养生汤</h2>
+                        <div class="recipe-tags">
+                            <span class="tag">补气</span>
+                            <span class="tag">养生</span>
+                        </div>
+                    </div>
+                    <p class="recipe-brief">经典滋补养生汤品，提升元气，增强体质</p>
+                    <div class="recipe-info">
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>烹饪时间：1小时</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-user-friends"></i>
+                            <span>适合人群：气虚体弱者</span>
+                        </div>
+                    </div>
+                    <div class="recipe-details">
+                        <h3>主料</h3>
+                        <p>人参、党参、黄芪、枸杞、大枣</p>
+                        <h3>功效</h3>
+                        <p>补气养血，提高免疫力，改善疲劳</p>
+                    </div>
+                    <button class="view-recipe" onclick="showRecipeDetails('ginseng-soup')">查看完整食谱</button>
+                </div>
+            </div>
+
+            <!-- 安神助眠食谱 -->
+            <div class="recipe-card" data-category="安神">
+                <div class="recipe-image">
+                    <img src="https://img.freepik.com/free-photo/chinese-sweet-soup-dessert_1147-156.jpg" alt="莲子百合汤">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-header">
+                        <h2>莲子百合汤</h2>
+                        <div class="recipe-tags">
+                            <span class="tag">安神</span>
+                            <span class="tag">助眠</span>
+                        </div>
+                    </div>
+                    <p class="recipe-brief">传统安神汤品，改善睡眠，静心安神</p>
+                    <div class="recipe-info">
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>烹饪时间：45分钟</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-user-friends"></i>
+                            <span>适合人群：失眠人群</span>
+                        </div>
+                    </div>
+                    <div class="recipe-details">
+                        <h3>主料</h3>
+                        <p>莲子、百合、红枣、枸杞</p>
+                        <h3>功效</h3>
+                        <p>养心安神，改善睡眠，提升睡眠质量</p>
+                    </div>
+                    <button class="view-recipe" onclick="showRecipeDetails('lotus-soup')">查看完整食谱</button>
+                </div>
+            </div>
+
+            <!-- 养颜驻颜食谱 -->
+            <div class="recipe-card" data-category="养颜">
+                <div class="recipe-image">
+                    <img src="https://img.freepik.com/free-photo/chinese-herbal-medicine-soup_1147-157.jpg" alt="桃胶银耳羹">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-header">
+                        <h2>桃胶银耳羹</h2>
+                        <div class="recipe-tags">
+                            <span class="tag">养颜</span>
+                            <span class="tag">美容</span>
+                        </div>
+                    </div>
+                    <p class="recipe-brief">天然美容养颜佳品，滋润肌肤，延缓衰老</p>
+                    <div class="recipe-info">
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>烹饪时间：2小时</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-user-friends"></i>
+                            <span>适合人群：爱美人士</span>
+                        </div>
+                    </div>
+                    <div class="recipe-details">
+                        <h3>主料</h3>
+                        <p>桃胶、银耳、红枣、枸杞</p>
+                        <h3>功效</h3>
+                        <p>滋润肌肤，美容养颜，提升胶原蛋白</p>
+                    </div>
+                    <button class="view-recipe" onclick="showRecipeDetails('beauty-soup')">查看完整食谱</button>
+                </div>
+            </div>
+
+            <!-- 温补养生食谱 -->
+            <div class="recipe-card" data-category="温补">
+                <div class="recipe-image">
+                    <img src="https://img.freepik.com/free-photo/chinese-herbal-chicken-soup_1147-158.jpg" alt="当归生姜羊肉汤">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-header">
+                        <h2>当归生姜羊肉汤</h2>
+                        <div class="recipe-tags">
+                            <span class="tag">温补</span>
+                            <span class="tag">暖身</span>
+                        </div>
+                    </div>
+                    <p class="recipe-brief">冬季温补佳品，温暖身心，驱寒祛湿</p>
+                    <div class="recipe-info">
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>烹饪时间：1.5小时</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-user-friends"></i>
+                            <span>适合人群：畏寒体质者</span>
+                        </div>
+                    </div>
+                    <div class="recipe-details">
+                        <h3>主料</h3>
+                        <p>羊肉、当归、生姜、枸杞</p>
+                        <h3>功效</h3>
+                        <p>温补养生，驱寒暖身，补血养气</p>
+                    </div>
+                    <button class="view-recipe" onclick="showRecipeDetails('warm-soup')">查看完整食谱</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 食谱详情弹窗 -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('recipeModal')">&times;</span>
+            <div class="modal-header">
+                <div class="modal-recipe-image">
+                    <img src="" alt="">
+                </div>
+                <h2 class="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="info-section">
+                    <h3>食材配方</h3>
+                    <p class="ingredients"></p>
+                </div>
+                <div class="info-section">
+                    <h3>烹饪步骤</h3>
+                    <p class="steps"></p>
+                </div>
+                <div class="info-section">
+                    <h3>功效与禁忌</h3>
+                    <p class="effects"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们弹窗 -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
+            <h2>联系我们</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>客服电话：15538716081</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>电子邮箱：yumingxing812@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>地址：河南省郑州市金水区商务内环中医药产业大厦</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <p>工作时间：周一至周五 9:00-18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页面底部 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关注我们</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-weixin"></i>
+                        <span>官方微信</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-weibo"></i>
+                        <span>官方微博</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                        <span>官方抖音</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p><i class="fas fa-phone"></i> 15538716081</p>
+                <p><i class="fas fa-envelope"></i> yumingxing812@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 河南省郑州市金水区商务内环中医药产业大厦</p>
+            </div>
+            <div class="footer-section">
+                <h3>友情链接</h3>
+                <div class="friend-links">
+                    <a href="#">中医药管理局</a>
+                    <a href="#">中医药学会</a>
+                    <a href="#">中医药研究院</a>
+                    <a href="#">中医药大学</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 中药材百科 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 食谱详情数据
+        const recipeData = {
+            'ginseng-soup': {
+                title: '人参养生汤',
+                image: 'https://img.freepik.com/free-photo/traditional-chinese-soup_1147-155.jpg',
+                ingredients: '人参 10g、党参 15g、黄芪 20g、枸杞 15g、大枣 5颗、生姜 3片',
+                steps: '1. 将所有药材洗净备用\n2. 锅中加入2000ml清水\n3. 大火煮沸后转小火慢炖1小时\n4. 最后加入适量盐调味即可',
+                effects: '功效：补气养血，提高免疫力，改善疲劳\n禁忌：阴虚火旺者慎服，不宜与萝卜同食'
+            },
+            'lotus-soup': {
+                title: '莲子百合汤',
+                image: 'https://img.freepik.com/free-photo/chinese-sweet-soup-dessert_1147-156.jpg',
+                ingredients: '莲子 30g、百合 20g、红枣 5颗、枸杞 10g、冰糖适量',
+                steps: '1. 莲子和百合提前浸泡2小时\n2. 锅中加入1500ml清水\n3. 放入所有材料大火煮沸\n4. 转小火煮45分钟\n5. 最后加入冰糖调味',
+                effects: '功效：养心安神，改善睡眠，提升睡眠质量\n禁忌：脾胃虚寒者慎服'
+            },
+            'beauty-soup': {
+                title: '桃胶银耳羹',
+                image: 'https://img.freepik.com/free-photo/chinese-herbal-medicine-soup_1147-157.jpg',
+                ingredients: '桃胶 30g、银耳 20g、红枣 5颗、枸杞 10g、冰糖适量',
+                steps: '1. 桃胶提前浸泡8小时，银耳提前浸泡2小时\n2. 锅中加入2000ml清水\n3. 先加入银耳煮至发软\n4. 加入其他材料继续炖煮30分钟\n5. 最后加入冰糖调味',
+                effects: '功效：滋润肌肤，美容养颜，提升胶原蛋白\n禁忌：感冒发热期间不宜食用'
+            },
+            'warm-soup': {
+                title: '当归生姜羊肉汤',
+                image: 'https://img.freepik.com/free-photo/chinese-herbal-chicken-soup_1147-158.jpg',
+                ingredients: '羊肉 500g、当归 15g、生姜 30g、枸杞 10g、料酒、盐适量',
+                steps: '1. 羊肉切块，生姜切片\n2. 锅中加入适量料酒焯烫羊肉\n3. 锅中加入2000ml清水\n4. 放入所有���料大火煮沸\n5. 转小火炖煮1.5小时\n6. 最后加入盐调味',
+                effects: '功效：温补养生，驱寒暖身，补血养气\n禁忌：阴虚火旺、高血压者慎服'
+            }
+        };
+
+        // 移动端菜单切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // 点击菜单项后关闭菜单
+            document.querySelectorAll('.nav-menu a').forEach(item => {
+                item.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+
+        // 搜索食谱
+        function searchRecipes() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const recipeCards = document.querySelectorAll('.recipe-card');
+            
+            recipeCards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const description = card.querySelector('.recipe-brief').textContent.toLowerCase();
+                const ingredients = card.querySelector('.recipe-details p').textContent.toLowerCase();
+                
+                if (title.includes(searchText) || description.includes(searchText) || ingredients.includes(searchText)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 筛选食谱
+        function filterRecipes(category) {
+            const recipeCards = document.querySelectorAll('.recipe-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            recipeCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 显示食谱详情
+        function showRecipeDetails(recipeId) {
+            const modal = document.getElementById('recipeModal');
+            const recipe = recipeData[recipeId];
+            
+            if (recipe) {
+                modal.querySelector('.modal-title').textContent = recipe.title;
+                modal.querySelector('.modal-recipe-image img').src = recipe.image;
+                modal.querySelector('.ingredients').textContent = recipe.ingredients;
+                modal.querySelector('.steps').textContent = recipe.steps;
+                modal.querySelector('.effects').textContent = recipe.effects;
+                modal.style.display = 'flex';
+            }
+        }
+
+        // 显示联系我们弹窗
+        function showContact() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        // 关闭弹窗
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

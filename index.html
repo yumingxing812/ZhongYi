@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中药材百科 - 传承千年智慧</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://api.dicebear.com/7.x/shapes/svg?seed=tcm&backgroundColor=614016" alt="中药材百科Logo" style="width: 40px; height: 40px;">
+                    <span class="logo-text">中药材百科</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="herbs.html">中药材百科</a></li>
+                <li><a href="science.html">中医学科普</a></li>
+                <li><a href="recipes.html">养生食谱</a></li>
+                <li><a href="#" onclick="showContact()">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主页横幅 -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hero-main-title">
+                <span class="title-line">传承千年智慧</span>
+                <span class="title-line">守护现代健康</span>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-subtitle">
+                <span class="subtitle-line">承古启今 · 济世为怀</span>
+                <span class="subtitle-emphasis">寻找自然之道，探索中医药文化的瑰宝</span>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </div>
+
+    <!-- 页面底部 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关注我们</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-weixin"></i>
+                        <span>官方微信</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-weibo"></i>
+                        <span>官方微博</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                        <span>官方抖音</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p><i class="fas fa-phone"></i> 15538716081</p>
+                <p><i class="fas fa-envelope"></i> yumingxing812@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 河南省郑州市金水区商务内环中医药产业大厦</p>
+            </div>
+            <div class="footer-section">
+                <h3>友情链接</h3>
+                <div class="friend-links">
+                    <a href="#">中医药管理局</a>
+                    <a href="#">中医药学会</a>
+                    <a href="#">中医药研究院</a>
+                    <a href="#">中医药大学</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 中药材百科 版权所有</p>
+        </div>
+    </footer>
+
+    <!-- 功效分类弹窗 -->
+    <div class="modal" id="categoriesModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('categoriesModal')">&times;</span>
+            <h2>功效分类</h2>
+            <div class="categories-grid">
+                <div class="category-item" onclick="filterHerbs('补气')">
+                    <h3>补气类</h3>
+                    <p>人参、黄芪等</p>
+                </div>
+                <div class="category-item" onclick="filterHerbs('补血')">
+                    <h3>补血类</h3>
+                    <p>当归、红枣等</p>
+                </div>
+                <div class="category-item" onclick="filterHerbs('安神')">
+                    <h3>安神类</h3>
+                    <p>莲子、桂圆等</p>
+                </div>
+                <div class="category-item" onclick="filterHerbs('清热')">
+                    <h3>清热类</h3>
+                    <p>菊花等</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们弹窗 -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
+            <h2>联系我们</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>客服电话：15538716081</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>电子邮箱：yumingxing812@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>地址：河南省郑州市金水区商务内环中医药产业大厦</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <p>工作时间：周一至周五 9:00-18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 移动端菜单切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // 点击菜单项后关闭菜单
+            document.querySelectorAll('.nav-menu a').forEach(item => {
+                item.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+
+        // 显示功效分类弹窗
+        function showCategories() {
+            document.getElementById('categoriesModal').style.display = 'flex';
+        }
+
+        // 显示联系我们弹窗
+        function showContact() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        // 关闭弹窗
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // 背景图片滚动动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroBackground = document.querySelector('.hero-background');
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            window.addEventListener('scroll', function() {
+                lastScrollY = window.scrollY;
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        // 计算滚动百分比（0-1之间）
+                        const scrollPercent = Math.min(lastScrollY / (window.innerHeight * 0.5), 1);
+                        // 计算缩放值（1-1.1之间）
+                        const scale = 1 + (scrollPercent * 0.1);
+                        // 应用变换
+                        heroBackground.style.transform = `scale(${scale})`;
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
